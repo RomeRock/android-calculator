@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="75dp"
             android:layout_weight="1"
-            android:text="Back" />
+            android:text="DEL" />
 
         <Button
             android:id="@+id/btnDivide"

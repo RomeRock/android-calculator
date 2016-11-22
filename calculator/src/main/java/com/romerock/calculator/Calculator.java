@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by Ebricko on 10/11/2016.
  */
@@ -35,9 +37,9 @@ public class Calculator extends LinearLayout {
     TextView screen;
     TextView txtHistory;
     String history;
-    float number1;
-    float number2;
-    float result;
+    double number1;
+    double number2;
+    double result;
     Boolean firstTime;
     String operationScreen;
     Context context;
@@ -108,11 +110,11 @@ public class Calculator extends LinearLayout {
                     b = (Button) v;
                     String buttonText = b.getText().toString();
                     firstTime = false;
-                    float value;
+                    double value;
                     if (v.getId() == R.id.btnDecimal)
                         value = 0;
                     else
-                        value = Float.valueOf(b.getText().toString());
+                        value = Double.parseDouble(b.getText().toString());
                     screen.setText(b.getText().toString());
                     number1 = value;
                     screen.setHint("0");
@@ -133,7 +135,7 @@ public class Calculator extends LinearLayout {
                             number1 = 0;
                         } else {
                             screen.setText(screen.getText().toString().substring(0, screen.getText().toString().length() - 1));
-                            number1 = Float.valueOf(screen.getText().toString());
+                            number1 = roundTwoDecimals(Double.parseDouble(screen.getText().toString()));
                         }
 
                 } else {
@@ -150,7 +152,7 @@ public class Calculator extends LinearLayout {
                         String screenT =screen.getText().toString()+ buttonText;
                         screenT=screenT.replace("..",".");
                         screen.setText(screenT);
-                        number1 = Float.parseFloat(screenT);
+                        number1 = roundTwoDecimals(Double.parseDouble(screenT));
                     } else {
                         if (v.getId() == R.id.btnAdd || v.getId() == R.id.btnMultiply || v.getId() == R.id.btnSubtract || v.getId() == R.id.btnDivide) {
                             b = (Button) v;
@@ -165,7 +167,7 @@ public class Calculator extends LinearLayout {
                                     return;
                                 }
                             }
-                            txtHistory.setText(txtHistory.getText() + String.valueOf(number1) + b.getText().toString());
+                            txtHistory.setText(txtHistory.getText() + String.valueOf(roundTwoDecimals(number1)) + b.getText().toString());
                             if (operationScreen == "") {
                                 screen.setHint("0");
                                 operationScreen = b.getText().toString();
@@ -176,14 +178,14 @@ public class Calculator extends LinearLayout {
                                 operation();
                                 operationScreen = b.getText().toString();
                                 screen.setText("");
-                                screen.setHint(String.valueOf(result));
+                                screen.setHint(String.valueOf(roundTwoDecimals(result)));
                                 number2 = result;
                                 number1 = result = 0;
                             }
                         } else {
                             if (v.getId() == R.id.btnEquals) {
                                 operation();
-                                screen.setHint(String.valueOf(result));
+                                screen.setHint(String.valueOf(roundTwoDecimals(result)));
                                 screen.setText("");
                                 txtHistory.setText("");
                                 operationScreen = "";
@@ -226,6 +228,12 @@ public class Calculator extends LinearLayout {
                 break;
         }
         return form;
+    }
+
+    double roundTwoDecimals(double d)
+    {
+        DecimalFormat twoDForm = new DecimalFormat("#.##");
+        return Double.valueOf(twoDForm.format(d));
     }
 }
 
