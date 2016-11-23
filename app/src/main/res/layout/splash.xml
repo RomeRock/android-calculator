@@ -6,6 +6,6 @@
     android:scaleType="centerCrop"
     android:src="@drawable/splash"
     android:contentDescription="@string/romerock"
-    tools:context=".SplashScreen" >
+    tools:context=".example.SplashScreen" >
 
 </ImageView>

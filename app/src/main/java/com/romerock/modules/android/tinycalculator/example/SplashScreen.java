@@ -1,4 +1,4 @@
-package com.romerock.modules.android.tinycalculator;
+package com.romerock.modules.android.tinycalculator.example;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.crashlytics.android.Crashlytics;
+import com.romerock.modules.android.tinycalculator.R;
 
 import io.fabric.sdk.android.Fabric;
 

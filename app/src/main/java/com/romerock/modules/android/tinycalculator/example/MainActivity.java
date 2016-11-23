@@ -1,4 +1,4 @@
-package com.romerock.modules.android.tinycalculator;
+package com.romerock.modules.android.tinycalculator.example;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,7 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-import com.romerock.calculator.Calculator;
+import com.romerock.modules.android.tinycalculator.Calculator;
+import com.romerock.modules.android.tinycalculator.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
