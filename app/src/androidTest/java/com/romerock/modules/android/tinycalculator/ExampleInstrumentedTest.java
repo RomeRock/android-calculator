@@ -1,4 +1,4 @@
-package com.romerock.tinycalculator;
+package com.romerock.modules.android.tinycalculator;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.romerock.tinycalculator", appContext.getPackageName());
+        assertEquals("com.romerock.modules.android.tinycalculator", appContext.getPackageName());
     }
 }

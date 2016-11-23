@@ -19,7 +19,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
     defaultConfig {
-        applicationId "com.romerock.tinycalculator"
+        applicationId "com.romerock.modules.android.tinycalculator"
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1

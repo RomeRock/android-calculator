@@ -1,4 +1,4 @@
-package com.romerock.tinycalculator;
+package com.romerock.modules.android.tinycalculator;
 
 import android.app.Activity;
 import android.content.Intent;

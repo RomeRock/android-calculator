@@ -1,4 +1,4 @@
-package com.romerock.tinycalculator;
+package com.romerock.modules.android.tinycalculator;
 
 import org.junit.Test;
 

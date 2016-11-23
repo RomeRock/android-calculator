@@ -1,27 +1,23 @@
-package com.romerock.tinycalculator;
+package com.romerock.modules.android.tinycalculator;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-import com.crashlytics.android.Crashlytics;
 import com.romerock.calculator.Calculator;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.calcEfect1)
