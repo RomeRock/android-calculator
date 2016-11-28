@@ -22,8 +22,10 @@
             android:layout_height="45dp"
             android:gravity="right"
             android:hint="0"
+            android:cursorVisible="false"
             android:imeOptions="actionDone"
-            android:inputType="none"/>
+            android:enabled="false"
+            android:inputType="numberDecimal"/>
     </LinearLayout>
 
     <LinearLayout
