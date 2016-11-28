@@ -178,16 +178,19 @@ public class Calculator extends LinearLayout {
                                 screen.setText("");
                             } else {
                                 operation();
+
                                 operationScreen = b.getText().toString();
                                 screen.setText("");
-                                screen.setHint(String.valueOf(roundTwoDecimals(result)));
+                                if(!context.getResources().getString(R.string.no_division_cero).equals(screen.getHint()))
+                                    screen.setHint(String.valueOf(roundTwoDecimals(result)));
                                 number2 = result;
                                 number1 = result = 0;
                             }
                         } else {
                             if (v.getId() == R.id.btnEquals) {
                                 operation();
-                                screen.setHint(String.valueOf(roundTwoDecimals(result)));
+                                if(!context.getResources().getString(R.string.no_division_cero).equals(screen.getHint()))
+                                    screen.setHint(String.valueOf(roundTwoDecimals(result)));
                                 screen.setText("");
                                 txtHistory.setText("");
                                 operationScreen = "";
@@ -212,7 +215,16 @@ public class Calculator extends LinearLayout {
                 result = number1 * number2;
                 break;
             case "/":
-                result = number2 / number1;
+                if(number1!=0){
+                    result = number2 / number1;
+                }else{
+                    screen.setHint(context.getResources().getString(R.string.no_division_cero));
+                    txtHistory.setText("");
+                    operationScreen = "";
+
+                    number1 = number2 = result = 0;
+                    firstTime = true;
+                }
                 break;
         }
     }

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Calculator</string>
-
+    <string name="no_division_cero">No se puede dividir entre cero</string>
 
 
     <!-- TECLAS-->
