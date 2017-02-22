@@ -2,8 +2,10 @@
 <resources>
     <style name="buttonStyle" parent="@android:style/Widget.Button.Small">
         <item name="android:textColor">#FFFFFF</item>
-        <item name="android:textSize">12sp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:width">80sp</item>
+        <item name="android:textSize">@dimen/boton_text_size</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
     </style>
     <style name="DialogAnimation_RightToLeft">
         <item name="android:windowEnterAnimation">@anim/slide_left</item>
@@ -12,5 +14,13 @@
     <style name="DialogAnimation_DownToUp">
         <item name="android:windowEnterAnimation">@anim/slide_up</item>
         <item name="android:windowExitAnimation">@anim/slide_bottom</item>
+    </style>
+    <style name="boton_text_size">
+        <item name="android:textSize">@dimen/boton_text_size</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="CustomDialog" parent="android:Theme.Holo.Dialog.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 </resources>

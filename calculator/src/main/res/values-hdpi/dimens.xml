@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="boton_height">78dp</dimen>
+    <dimen name="boton_doble">156dp</dimen>
+    <dimen name="margin_x">12sp</dimen>
+</resources>

@@ -1,59 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="0sp"
+    android:orientation="vertical"
+    android:padding="0sp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:background="@drawable/round_top_calculator"
+        android:gravity="right">
+
+        <ImageView
+            android:id="@+id/btnClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_x"
+            android:background="@color/colorPrimary"
+            android:padding="5sp"
+            android:src="@drawable/btn_close" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:background="@color/white"
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
             android:id="@+id/txtHistory"
-            android:gravity="right" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:paddingRight="@dimen/margin_x"
+            android:textColor="@color/morado" />
 
         <EditText
             android:id="@+id/txtScreen"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:gravity="right"
-            android:hint="0"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
             android:cursorVisible="false"
-            android:imeOptions="actionDone"
             android:enabled="false"
-            android:inputType="numberDecimal"/>
+            android:gravity="right"
+            android:paddingRight="@dimen/margin_x"
+            android:hint="0"
+            android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="35sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="75dp"
+        android:layout_height="@dimen/boton_height"
+        android:background="@color/white"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnClear"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
+            android:id="@+id/btnDone"
+            android:layout_width="@dimen/boton_height"
+            android:layout_height="@dimen/boton_height"
             android:layout_weight="1"
-            android:text="AC" />
+            style="@style/boton_text_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:text="@string/done"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="@dimen/boton_height"
+            android:layout_height="@dimen/boton_height"
+            android:layout_weight="1"
+            style="@style/boton_text_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:text="C" />
 
         <Button
             android:id="@+id/btnBack"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
+            android:layout_width="@dimen/boton_height"
+            android:layout_height="@dimen/boton_height"
             android:layout_weight="1"
-            android:text="DEL" />
+            style="@style/boton_text_size"
+            android:background="@drawable/delete"
+            android:scaleType="centerCrop"
+            android:text="" />
 
         <Button
             android:id="@+id/btnDivide"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
+            style="@style/buttonStyle"
+            android:layout_width="@dimen/boton_height"
+            android:layout_height="@dimen/boton_height"
             android:layout_weight="1"
             android:text="/" />
 
@@ -61,148 +104,164 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="75dp"
+        android:layout_height="@dimen/boton_height"
+        android:background="@color/white"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnSeven"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
+            android:layout_width="@dimen/boton_height"
+            android:layout_height="@dimen/boton_height"
             android:layout_weight="1"
+            style="@style/boton_text_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:text="7" />
 
         <Button
             android:id="@+id/btnEight"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
+            android:layout_width="@dimen/boton_height"
+            android:layout_height="@dimen/boton_height"
             android:layout_weight="1"
+            style="@style/boton_text_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:text="8" />
 
         <Button
             android:id="@+id/btnNine"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
+            android:layout_width="@dimen/boton_height"
+            android:layout_height="@dimen/boton_height"
             android:layout_weight="1"
+            style="@style/boton_text_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:text="9" />
 
         <Button
             android:id="@+id/btnMultiply"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
+            style="@style/buttonStyle"
+            android:layout_width="@dimen/boton_height"
+            android:layout_height="@dimen/boton_height"
             android:layout_weight="1"
-            android:text="X" />
+            android:text="x" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="75dp"
+        android:layout_height="@dimen/boton_height"
+        android:background="@color/white"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnFour"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
+            android:layout_width="@dimen/boton_height"
+            android:layout_height="@dimen/boton_height"
             android:layout_weight="1"
+            style="@style/boton_text_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:text="4" />
 
         <Button
             android:id="@+id/btnFive"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
+            android:layout_width="@dimen/boton_height"
+            android:layout_height="@dimen/boton_height"
             android:layout_weight="1"
+            style="@style/boton_text_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:text="5" />
 
         <Button
             android:id="@+id/btnSix"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
+            android:layout_width="@dimen/boton_height"
+            android:layout_height="@dimen/boton_height"
             android:layout_weight="1"
+            style="@style/boton_text_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:text="6" />
 
         <Button
             android:id="@+id/btnAdd"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
+            style="@style/buttonStyle"
+            android:layout_width="@dimen/boton_height"
+            android:layout_height="@dimen/boton_height"
             android:layout_weight="1"
             android:text="+" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="75dp"
+        android:layout_height="@dimen/boton_height"
+        android:background="@color/white"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnOne"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
+            android:layout_width="@dimen/boton_height"
+            android:layout_height="@dimen/boton_height"
             android:layout_weight="1"
+            style="@style/boton_text_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:text="1" />
 
         <Button
             android:id="@+id/btnTwo"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
+            android:layout_width="@dimen/boton_height"
+            android:layout_height="@dimen/boton_height"
             android:layout_weight="1"
+            style="@style/boton_text_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:text="2" />
 
         <Button
             android:id="@+id/btnThree"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
+            android:layout_width="@dimen/boton_height"
+            android:layout_height="@dimen/boton_height"
             android:layout_weight="1"
+            style="@style/boton_text_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:text="3" />
 
         <Button
             android:id="@+id/btnSubtract"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
+            style="@style/buttonStyle"
+            android:layout_width="@dimen/boton_height"
+            android:layout_height="@dimen/boton_height"
             android:layout_weight="1"
             android:text="-" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="75dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnDecimal"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
-            android:layout_weight="1"
-            android:text="." />
+        android:layout_height="@dimen/boton_height"
+        android:background="@drawable/round_botton_calculator"
+        android:orientation="horizontal"
+        style="@style/boton_text_size"
+        android:weightSum="1">
 
         <Button
             android:id="@+id/btnZero"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
+            android:layout_width="@dimen/boton_doble"
+            android:layout_height="@dimen/boton_height"
             android:layout_weight="1"
+            style="@style/boton_text_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:text="0" />
 
         <Button
-            android:id="@+id/btnEquals"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
+            android:id="@+id/btnDecimal"
+            android:layout_width="@dimen/boton_height"
+            android:layout_height="@dimen/boton_height"
             android:layout_weight="1"
-            android:text="=" />
+            style="@style/boton_text_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:text="." />
 
+        <Button
+            android:id="@+id/btnEquals"
+            style="@style/buttonStyle"
+            android:layout_width="@dimen/boton_height"
+            android:layout_height="@dimen/boton_height"
+            android:background="@drawable/round_botton_right_calculator"
+            android:text="=" />
 
 
     </LinearLayout>
