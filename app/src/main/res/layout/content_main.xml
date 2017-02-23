@@ -27,7 +27,7 @@
         android:layout_height="@dimen/btn_height"
         android:text="Open calculator"
         android:textSize="16sp"
-        style="@style/buttonStyle"
+        style="@style/buttonStyleMain"
         android:gravity="center|center_vertical"
         android:id="@+id/calculator"
         android:layout_above="@+id/imageView"

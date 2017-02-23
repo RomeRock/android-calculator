@@ -11,8 +11,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.romerock.modules.android.tinycalculator.Calculator;
 import com.romerock.modules.android.tinycalculator.R;
@@ -57,6 +59,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
+
+
+        WebView view = new WebView(this);
+        view.setVerticalScrollBarEnabled(false);
+        view.setBackgroundColor(getResources().getColor(R.color.drawable));
+        ((RelativeLayout)findViewById(R.id.relContent)).addView(view);
+        view.loadData(getString(R.string.thank_you), "text/html; charset=utf-8", "utf-8");
+
     }
 
     @Override

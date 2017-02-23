@@ -7,7 +7,17 @@
     <string name="share_text_msn">Ejemplo de TinyCalucator. Visita www.romerock.com</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="thank_you">Thank you for downloading our Mini Module! Follow us on GitHub for more cool Mini Modules that will help you to make an awesome app a lot easier.</string>
+    <string name="thank_you">
+        <![CDATA[
+            <style>
+                .text{
+                    font-size:14px;
+                    color:#FFFFFF;
+                    line-height:20px;
+                }
+            </style>
+            <div align=justify class="text">Thank you for downloading our Mini Module! Follow us on GitHub for more cool Mini Modules that will help you to make an awesome app a lot easier.</div>
+        ]]></string>
     <string name="tittle_header">Mini Module: Tiny Calculator</string>
     <string name="follow_us_twitter">https://twitter.com/RomeRock_Apps</string>
     <string name="follow_us_twitter_profile">twitter://user?screen_name=RomeRock_Apps</string>
