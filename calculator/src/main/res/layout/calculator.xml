@@ -38,7 +38,8 @@
             android:layout_height="wrap_content"
             android:gravity="right"
             android:paddingRight="@dimen/margin_x"
-            android:textColor="@color/morado" />
+            android:textSize="20sp"
+            android:textColor="@color/gris" />
 
         <EditText
             android:id="@+id/txtScreen"

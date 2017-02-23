@@ -3,14 +3,16 @@ package com.romerock.modules.android.tinycalculator.example;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.romerock.modules.android.tinycalculator.Calculator;
 import com.romerock.modules.android.tinycalculator.R;
@@ -20,17 +22,33 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
+    @BindView(R.id.img_logo_romerock)
+    ImageView img_logo_romerock;
+    @BindView(R.id.follow_twitter)
+    ImageView followTwitter;
+    @BindView(R.id.follow_gitHub)
+    ImageView followGitHub;
+    @BindView(R.id.follow_facebook)
+    ImageView followFacebook;
+    @BindView(R.id.calculator)
+    Button calcEfect1;
     private AlertDialog alertDialog;
     private View.OnClickListener onClickListener;
-    @BindView(R.id.calcEfect1)
-    Button calcEfect1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
         onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
@@ -44,40 +62,53 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        /*getMenuInflater().inflate(R.menu.menu_main, menu);*/
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_visitanos) {
-            Uri uri = Uri.parse(getString(R.string.romerock_site)); // missing 'http://' will cause crashed
-            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-            startActivity(intent);
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @OnClick({R.id.calcEfect1})
+    @OnClick({R.id.img_logo_romerock, R.id.follow_twitter, R.id.follow_gitHub, R.id.follow_facebook, R.id.calculator})
     public void onClick(View view) {
-        Calculator calc=new Calculator(this, 0);
-        AlertDialog.Builder builder;
-        builder = new AlertDialog.Builder(MainActivity.this, R.style.CustomDialog);
-        LayoutInflater inflater = (this).getLayoutInflater();
-        builder.setCancelable(true);
-        view = calc;
-        view.findViewById(R.id.btnDone).setOnClickListener(onClickListener);
-        view.findViewById(R.id.btnClose).setOnClickListener(onClickListener);
-        builder.setView(view);
-        builder.create();
-        alertDialog = builder.show();
+        String url = "";
+        switch (view.getId()) {
+            case R.id.img_logo_romerock:
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.romerock_page))));
+                break;
+            case R.id.follow_facebook:
+                try {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.follow_us_facebook_profile)));
+                    startActivity(intent);
+                } catch (Exception e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.follow_us_facebook))));
+                }
+                break;
+            case R.id.follow_gitHub:
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.follow_us_git_hub))));
+                break;
+            case R.id.follow_twitter:
+                try {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.follow_us_twitter_profile)));
+                    startActivity(intent);
+                } catch (Exception e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.follow_us_twitter))));
+                }
+                break;
+            case R.id.calculator:
+                    if (alertDialog != null && alertDialog.isShowing()) {
+                        alertDialog.dismiss();
+                    }
+                    Calculator calc = new Calculator(this, 0);
+                    AlertDialog.Builder builder;
+                    builder = new AlertDialog.Builder(MainActivity.this, R.style.CustomDialog);
+                    LayoutInflater inflater = (this).getLayoutInflater();
+                    builder.setCancelable(true);
+                    view = calc;
+                    view.findViewById(R.id.btnDone).setOnClickListener(onClickListener);
+                    view.findViewById(R.id.btnClose).setOnClickListener(onClickListener);
+                    builder.setView(view);
+                    builder.create();
+                    alertDialog = builder.show();
+                break;
+        }
     }
 }

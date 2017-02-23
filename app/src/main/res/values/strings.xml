@@ -1,8 +1,18 @@
 <resources>
-    <string name="app_name">TinyCalculator</string>
+    <string name="app_name">MM: Tiny calculator</string>
     <string name="romerock">Rome Rock</string>
     <string name="action_settings">Settings</string>
     <string name="action_visitanos">Visitanos</string>
     <string name="romerock_site">http://www.romerock.com</string>
     <string name="share_text_msn">Ejemplo de TinyCalucator. Visita www.romerock.com</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="thank_you">Thank you for downloading our Mini Module! Follow us on GitHub for more cool Mini Modules that will help you to make an awesome app a lot easier.</string>
+    <string name="tittle_header">Mini Module: Tiny Calculator</string>
+    <string name="follow_us_twitter">https://twitter.com/RomeRock_Apps</string>
+    <string name="follow_us_twitter_profile">twitter://user?screen_name=RomeRock_Apps</string>
+    <string name="follow_us_facebook">https://www.facebook.com/RomeRock-App-Studio-337180269970605</string>
+    <string name="follow_us_facebook_profile">fb://page/337180269970605</string>
+    <string name="follow_us_git_hub">https://github.com/RomeRock</string>
+    <string name="romerock_page">http://romerock.com</string>
 </resources>
