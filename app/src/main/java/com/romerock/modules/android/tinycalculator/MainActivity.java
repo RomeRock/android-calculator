@@ -1,4 +1,4 @@
-package com.romerock.modules.android.tinycalculator.example;
+package com.romerock.modules.android.tinycalculator;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -15,9 +15,6 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-
-import com.romerock.modules.android.tinycalculator.Calculator;
-import com.romerock.modules.android.tinycalculator.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
